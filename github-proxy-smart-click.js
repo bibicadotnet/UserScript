@@ -6,8 +6,8 @@
 // @description  Chỉ proxy link download/raw, không đổi domain github.com khi lướt web
 // @author       gh.bibica.net
 // @match        *://github.com/*
-// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.user.js
-// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.user.js
+// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.js
+// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.js
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
