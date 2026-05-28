@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         YouTube: Quality Auto Max
+// @name         YouTube Quality Auto Max
 // @namespace    https://github.com/bibicadotnet/UserScript/
 // @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.0
