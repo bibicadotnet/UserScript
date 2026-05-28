@@ -3,7 +3,7 @@
 // @namespace    https://github.com/bibicadotnet/UserScript/
 // @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.0
-// @author       CY Fung
+// @author       bibica.net
 // @license      MIT
 // @description  Tự động chọn Max Quality 4K nhưng cho phép giảm độ phân giải thủ công khi cần
 // @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/youtube-quality-auto-max.js
