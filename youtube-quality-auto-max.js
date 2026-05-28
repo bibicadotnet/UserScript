@@ -2,7 +2,7 @@
 // @name         YouTube Quality Auto Max ((Cap at 4K))
 // @namespace    https://github.com/bibicadotnet/UserScript/
 // @homepageURL  https://github.com/bibicadotnet/UserScript/
-// @version      1.0.0
+// @version      1.0.1
 // @author       bibica.net
 // @license      MIT
 // @description  Tự động chọn Max Quality 4K nhưng cho phép giảm độ phân giải thủ công khi cần
