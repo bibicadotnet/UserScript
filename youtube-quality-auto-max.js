@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         YouTube Quality Auto Max ((Cap at 4K))
+// @name         YouTube Quality Auto Max (Cap at 4K)
 // @namespace    https://github.com/bibicadotnet/UserScript/
 // @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.0.0
