@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         GitHub Proxy Smart Click
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/bibicadotnet/UserScript/
+// @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.0
 // @description  Chỉ proxy link download/raw, không đổi domain github.com khi lướt web
 // @author       gh.bibica.net
 // @match        *://github.com/*
-// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.js
-// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.js
+// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.user.js
+// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/github-proxy-smart-click.user.js
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
