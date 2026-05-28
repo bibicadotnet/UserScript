@@ -6,8 +6,8 @@
 // @author       CY Fung
 // @license      MIT
 // @description  Tự động chọn Max Quality nhưng cho phép giảm độ phân giải thủ công khi cần
-// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/youtube-quality-auto-max.user.js
-// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/youtube-quality-auto-max.user.js
+// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/youtube-quality-auto-max.js
+// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/youtube-quality-auto-max.js
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
