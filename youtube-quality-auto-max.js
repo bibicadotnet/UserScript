@@ -2,7 +2,7 @@
 // @name         YouTube Quality Auto Max (Cap at 4K)
 // @namespace    https://github.com/bibicadotnet/UserScript/
 // @homepageURL  https://github.com/bibicadotnet/UserScript/
-// @version      1.0.0
+// @version      1.1.0
 // @author       bibica.net
 // @license      MIT
 // @description  Tự động chọn Max Quality 4K nhưng cho phép giảm độ phân giải thủ công khi cần
@@ -35,42 +35,6 @@
         'авто',
     ];
 
-    function modifyPlayerResponse(obj) {
-        if (!obj?.streamingData?.adaptiveFormats) return obj;
-        try {
-            obj.streamingData.adaptiveFormats = [...obj.streamingData.adaptiveFormats].sort((a, b) => {
-                const effA = (a.height || 0) > 2160 ? -1 : (a.height || 0);
-                const effB = (b.height || 0) > 2160 ? -1 : (b.height || 0);
-                return effB !== effA ? effB - effA : (b.bitrate || 0) - (a.bitrate || 0);
-            });
-        } catch {}
-        return obj;
-    }
-
-    let _initial = window.ytInitialPlayerResponse;
-    Object.defineProperty(window, 'ytInitialPlayerResponse', {
-        get: () => _initial,
-        set: v => { _initial = modifyPlayerResponse(v); },
-        configurable: true
-    });
-
-    const origFetch = window.fetch;
-    window.fetch = async function(...args) {
-        const url = typeof args[0] === 'string' ? args[0] : (args[0]?.url ?? '');
-        if (!url.includes('/youtubei/v1/player')) return origFetch.apply(this, args);
-        const res = await origFetch.apply(this, args);
-        try {
-            const json = await res.clone().json();
-            return new Response(JSON.stringify(modifyPlayerResponse(json)), {
-                status: res.status,
-                statusText: res.statusText,
-                headers: res.headers
-            });
-        } catch {
-            return res;
-        }
-    };
-
     function forceQuality(player) {
         if (isManualOverride || !player || document.visibilityState !== 'visible') return;
         if (typeof player.getAvailableQualityLevels !== 'function') {
@@ -99,9 +63,9 @@
         const player = document.getElementById('movie_player');
         if (!player) return;
         observer.disconnect();
-        player.__qEvented = true;
         if (typeof player.addEventListener === 'function') {
             player.addEventListener('onAvailableQualityLevelsChanged', () => forceQuality(player));
+            player.addEventListener('onVideoDataChange', () => forceQuality(player));
             player.addEventListener('onStateChange', s => {
                 if (s === -1 || s === 1 || s === 3) forceQuality(player);
             });
@@ -110,19 +74,16 @@
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });
 
-    document.addEventListener('yt-page-data-fetched', () => {
-        forceQuality(document.getElementById('movie_player'));
-    });
-
     document.addEventListener('yt-navigate-finish', () => {
         isManualOverride = false;
         forceQuality(document.getElementById('movie_player'));
     });
 
+    const now = Date.now();
     const QUALITY_STORAGE_VALUE = JSON.stringify({
         data: TARGET,
-        expiration: Date.now() + 31536000000,
-        creation: Date.now()
+        expiration: now + 31536000000,
+        creation: now
     });
 
     const patchStorage = s => {
@@ -138,7 +99,7 @@
             return setItem.call(this, k, v);
         };
     };
-    try { patchStorage(localStorage); patchStorage(sessionStorage); } catch {}
+    try { patchStorage(localStorage); } catch {}
 
     document.addEventListener('click', e => {
         const item = e.target.closest('.ytp-quality-menu .ytp-menuitem, .ytp-settings-menu .ytp-menuitem');
