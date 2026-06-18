@@ -6,6 +6,8 @@
 // @author       bibica.net
 // @license      MIT
 // @description  Mở kết quả tìm kiếm từ Google bằng tab Web thuần túy và dọn URL tracking
+// @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/google-web-only.user.js
+// @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/google-web-only.user.js
 // @match        *://www.google.com/search*
 // @match        *://www.google.com.vn/search*
 // @match        *://www.google.com/webhp*
