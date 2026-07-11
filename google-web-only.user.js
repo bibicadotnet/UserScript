@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         Google Web Only
 // @namespace    https://github.com/bibicadotnet/UserScript/
-// @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.7
 // @author       bibica.net
 // @license      MIT
