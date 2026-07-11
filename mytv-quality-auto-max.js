@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyTV Quality Auto Max
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.0
 // @description  Tự động chọn chất lượng cao nhất cho MyTV (mytv.com.vn)
 // @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/mytv-quality-auto-max.js
 // @updateURL    https://raw.githubusercontent.com/bibicadotnet/UserScript/main/mytv-quality-auto-max.js
