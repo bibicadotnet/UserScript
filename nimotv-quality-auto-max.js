@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         NimoTV Quality Auto Max
 // @namespace    https://github.com/bibicadotnet/UserScript/
-// @homepageURL  https://github.com/bibicadotnet/UserScript/
 // @version      1.0
 // @description  Tự động chọn chất lượng cao nhất cho NimoTV embed
 // @downloadURL  https://raw.githubusercontent.com/bibicadotnet/UserScript/main/nimotv-quality-auto-max.js
